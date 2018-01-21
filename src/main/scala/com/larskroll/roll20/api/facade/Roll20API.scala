@@ -20,7 +20,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  */
 
 package com.larskroll.roll20.api.facade
@@ -28,6 +28,7 @@ package com.larskroll.roll20.api.facade
 import scalajs.js
 import scalajs.js.annotation._
 import scalajs.js.typedarray._
+import scalajs.js.|
 
 @js.native
 @JSGlobalScope
@@ -219,6 +220,22 @@ object Roll20API extends js.Object {
   }
 
   @js.native
+  trait InlineRollResults extends js.Object {
+    val resultType: String = js.native;
+    val rolls: js.Array[js.Object] = js.native;
+    val total: Int | Float = js.native;
+    val `type`: String = js.native;
+  }
+
+  @js.native
+  trait InlineRoll extends js.Object {
+    val expression: String = js.native;
+    val results: InlineRollResults = js.native;
+    val rollid: js.UndefOr[String] = js.native;
+    val signature: Boolean | String = js.native;
+  }
+
+  @js.native
   trait ChatMessage extends js.Object {
     /**
      * The display name of the player or character that sent the message.
@@ -257,7 +274,7 @@ object Roll20API extends js.Object {
      *
      * An array of objects containing information about all inline rolls in the message.
      */
-    val inlinerolls: js.UndefOr[js.Array[js.Object]] = js.native;
+    val inlinerolls: js.UndefOr[js.Array[InlineRoll]] = js.native;
     /**
      * The name of the template specified.
      *
