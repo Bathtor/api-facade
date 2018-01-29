@@ -236,6 +236,12 @@ object Roll20API extends js.Object {
   }
 
   @js.native
+  trait Selection extends js.Object {
+    val _id: String = js.native;
+    val _type: String = js.native;
+  }
+
+  @js.native
   trait ChatMessage extends js.Object {
     /**
      * The display name of the player or character that sent the message.
@@ -299,6 +305,6 @@ object Roll20API extends js.Object {
      * An array of objects the user had selected when the command was entered.
      * (type "api" only)
      */
-    val selected: js.UndefOr[js.Array[Roll20Object]] = js.native;
+    val selected: js.UndefOr[js.Array[Selection]] = js.native;
   }
 }
