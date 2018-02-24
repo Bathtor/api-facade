@@ -180,7 +180,7 @@ object Roll20API extends js.Object {
    *
    * See [[https://wiki.roll20.net/API:Function_documentation#getAttrByName]]
    */
-  def getAttrByName(characterId: String, attributeName: String, valueType: String = "current"): js.Any = js.native;
+  def getAttrByName(characterId: String, attributeName: String, valueType: String = "current"): js.UndefOr[js.Any] = js.native;
 
   /**
    * Get object of type with id.
