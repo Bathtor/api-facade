@@ -1,13 +1,14 @@
 enablePlugins(ScalaJSPlugin)
+enablePlugins(JSDependenciesPlugin)
 
 name := "Roll20 API Facade"
 
 organization := "com.lkroll.roll20"
 
-version := "1.2.1"
+version := "1.2.2"
 
-scalaVersion := "2.12.8"
-crossScalaVersions := Seq("2.11.12", "2.12.8")
+scalaVersion := "2.12.11"
+crossScalaVersions := Seq("2.11.12", "2.12.12")
 
 jsDependencies += ProvidedJS / "Roll20Extras.js"
 
