@@ -3,18 +3,45 @@ enablePlugins(JSDependenciesPlugin)
 
 name := "Roll20 API Facade"
 
-organization := "com.lkroll.roll20"
-
-version := "1.2.3"
+organization := "com.lkroll"
 
 scalaVersion := "2.13.5"
 crossScalaVersions := Seq("2.11.12", "2.12.13", "2.13.5")
 
+licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
+
+homepage := Some(url("https://github.com/Bathtor/roll20-core"))
+scmInfo := Some(
+                ScmInfo(url("https://github.com/Bathtor/roll20-core"),
+                            "git@github.com:Bathtor/roll20-core.git"))
+developers := List(Developer(id = "lkroll",
+                             name = "Lars Kroll",
+                             email = "bathtor@googlemail.com",
+                             url = url("https://github.com/Bathtor")))
+publishMavenStyle := true
+
+// Add sonatype repository settings
+sonatypeCredentialHost := "s01.oss.sonatype.org"
+sonatypeRepository := "https://s01.oss.sonatype.org/service/local"
+publishTo := sonatypePublishToBundle.value
+
+import ReleaseTransformations._
+
+releaseCrossBuild := true // true if you cross-build the project for multiple Scala versions
+releaseProcess := Seq[ReleaseStep](
+  checkSnapshotDependencies,
+  inquireVersions,
+  runClean,
+  runTest,
+  setReleaseVersion,
+  commitReleaseVersion,
+  tagRelease,
+  releaseStepCommandAndRemaining("+publishSigned"),
+  releaseStepCommand("sonatypeBundleRelease"),
+  setNextVersion,
+  commitNextVersion,
+  pushChanges
+)
+
 jsDependencies += ProvidedJS / "Roll20Extras.js"
 
-resolvers += Resolver.bintrayRepo("lkrollcom", "maven")
-
-licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
-bintrayPackageLabels := Seq("roll20", "api", "facade")
-bintrayOrganization := Some("lkrollcom")
-bintrayRepository := "maven"
