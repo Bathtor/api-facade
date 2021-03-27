@@ -10,10 +10,10 @@ crossScalaVersions := Seq("2.11.12", "2.12.13", "2.13.5")
 
 licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
 
-homepage := Some(url("https://github.com/Bathtor/roll20-core"))
+homepage := Some(url("https://github.com/Bathtor/api-facade"))
 scmInfo := Some(
-                ScmInfo(url("https://github.com/Bathtor/roll20-core"),
-                            "git@github.com:Bathtor/roll20-core.git"))
+                ScmInfo(url("https://github.com/Bathtor/api-facade"),
+                            "git@github.com:Bathtor/api-facade.git"))
 developers := List(Developer(id = "lkroll",
                              name = "Lars Kroll",
                              email = "bathtor@googlemail.com",
