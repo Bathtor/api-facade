@@ -35,9 +35,9 @@ object Roll20Extras extends js.Object {
   val version: String = js.native;
 
   /**
-   * Generate a new repeating section rowId with the same code as the sheetworkers use.
-   *
-   * If generating multiple rowIds in a row, make sure to double check for duplicates, as generation is time seeded.
-   */
+    * Generate a new repeating section rowId with the same code as the sheetworkers use.
+    *
+    * If generating multiple rowIds in a row, make sure to double check for duplicates, as generation is time seeded.
+    */
   def generateRowID(): String = js.native;
 }

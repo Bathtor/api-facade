@@ -35,76 +35,87 @@ import scalajs.js.|
 object Roll20Objects extends js.Object {
   @js.native
   trait CharacterCreate extends js.Object {
+
     /**
-     * URL to an image used for the character.
-     *
-     * See the note about avatar and imgsrc restrictions at [[https://wiki.roll20.net/API:Objects#imgsrc_and_avatar_property_restrictions Roll20 Docs]].
-     */
+      * URL to an image used for the character.
+      *
+      * See the note about avatar and imgsrc restrictions at [[https://wiki.roll20.net/API:Objects#imgsrc_and_avatar_property_restrictions Roll20 Docs]].
+      */
     var avatar: String = js.native;
     var name: String = js.native;
+
     /**
-     *  The character's biography.
-     *
-     *  See the note at [[https://wiki.roll20.net/API:Objects#Using_the_Notes.2C_GMNotes.2C_and_Bio_fields_.5BAsynchronous.5D Roll20 Docs]] about accessing the Notes, GMNotes, and bio fields.
-     */
+      *  The character's biography.
+      *
+      *  See the note at [[https://wiki.roll20.net/API:Objects#Using_the_Notes.2C_GMNotes.2C_and_Bio_fields_.5BAsynchronous.5D Roll20 Docs]] about accessing the Notes, GMNotes, and bio fields.
+      */
     var bio: String = js.native;
+
     /**
-     * 	Notes on the character only viewable by the GM.
-     *
-     * See the note at [[https://wiki.roll20.net/API:Objects#Using_the_Notes.2C_GMNotes.2C_and_Bio_fields_.5BAsynchronous.5D Roll20 Docs]] about accessing the Notes, GMNotes, and bio fields.
-     */
+      * 	Notes on the character only viewable by the GM.
+      *
+      * See the note at [[https://wiki.roll20.net/API:Objects#Using_the_Notes.2C_GMNotes.2C_and_Bio_fields_.5BAsynchronous.5D Roll20 Docs]] about accessing the Notes, GMNotes, and bio fields.
+      */
     var gmnotes: String = js.native;
     var archived: Boolean = js.native;
+
     /**
-     * Comma-delimited list of player ID who can view this character.
-     *
-     * Use "all" to give all players the ability to view.
-     */
+      * Comma-delimited list of player ID who can view this character.
+      *
+      * Use "all" to give all players the ability to view.
+      */
     var inplayerjournals: String = js.native;
 
     /**
-     * Comma-delimited list of player IDs who can control and edit this character.
-     *
-     * Use "all" to give all players the ability to edit.
-     */
+      * Comma-delimited list of player IDs who can control and edit this character.
+      *
+      * Use "all" to give all players the ability to edit.
+      */
     var controlledby: String = js.native;
   }
 
   @js.native
   trait AbilityCreate extends js.Object {
+
     /**
-     * The character this ability belongs to. Read-only. Mandatory when using createObj.
-     */
+      * The character this ability belongs to. Read-only. Mandatory when using createObj.
+      */
     var _characterid: String = js.native;
     var name: String = js.native;
+
     /**
-     * The description does not appear in the character sheet interface.
-     */
+      * The description does not appear in the character sheet interface.
+      */
     var description: String = js.native;
+
     /**
-     * 	The text of the ability.
-     */
+      * 	The text of the ability.
+      */
     var action: String = js.native;
+
     /**
-     * Is this ability a token action that should show up when tokens linked to its parent Character are selected?
-     */
+      * Is this ability a token action that should show up when tokens linked to its parent Character are selected?
+      */
     var istokenaction: Boolean = js.native;
   }
 
   @js.native
   trait AttributeCreate extends js.Object {
+
     /**
-     * The character this attribute belongs to. Read-only. Mandatory when using createObj.
-     */
+      * The character this attribute belongs to. Read-only. Mandatory when using createObj.
+      */
     var _characterid: String = js.native;
     var name: String = js.native;
+
     /**
-     * The current value of the attribute can be accessed in chat and macros with the syntax @{Character Name|Attribute Name} or in abilities with the syntax @{Attribute Name}.
-     */
+      * The current value of the attribute can be accessed in chat and macros with the syntax @{Character Name|Attribute Name} or in abilities with the syntax @{Attribute Name}.
+      */
     var current: String = js.native;
+
     /**
-     * 	The max value of the attribute can be accessed in chat and macros with the syntax @{Character Name|Attribute Name|max} or in abilities with the syntax @{Attribute Name|max}.
-     */
+      * 	The max value of the attribute can be accessed in chat and macros with the syntax @{Character Name|Attribute Name|max} or in abilities with the syntax @{Attribute Name|max}.
+      */
     var max: String = js.native;
   }
 }

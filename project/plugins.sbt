@@ -1,5 +1,7 @@
-addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "5.2.4")
+addSbtPlugin("org.foundweekends" % "sbt-bintray" % "0.6.1")
 
-addSbtPlugin("org.foundweekends" % "sbt-bintray" % "0.5.4")
+addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.5.0")
 
-addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.26")
+addSbtPlugin("org.scala-js" % "sbt-jsdependencies" % "1.0.2")
+
+addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.4.2")
